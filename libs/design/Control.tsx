@@ -21,7 +21,7 @@ const Control = forwardRef(
   ) => (
     <button
       ref={ref}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px] mx-[5px]"
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onTouchStart={onTouchStart}

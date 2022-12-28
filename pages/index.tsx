@@ -9,22 +9,23 @@ export default function Home() {
   const buttonLeftRef = useRef<HTMLButtonElement>(null);
   const buttonRightRef = useRef<HTMLButtonElement>(null);
 
-  let x = 250;
-  let y = 150;
-  let coinx = Math.random() * (600 - 50);
-  let coinY = Math.random() * (400 - 50);
   let direction = 0;
-
-  let t = Date.now();
-  let speed = 300;
-  let score = 0;
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
 
+    let x = 250;
+    let y = 150;
+    let coinx = Math.random() * (600 - 50);
+    let coinY = Math.random() * (400 - 50);
+
+    let t = Date.now();
+    let speed = 300;
+    let score = 0;
+
     function draw() {
-      var timePassed = (Date.now() - t) / 1000;
+      const timePassed = (Date.now() - t) / 1000;
       t = Date.now();
 
       context?.clearRect(0, 0, 600, 400);
@@ -94,9 +95,8 @@ export default function Home() {
         Your browser does not support HTML5 canvas tag.
       </canvas>
       <div className="my-5">
-        <button
+        <Control
           ref={buttonUpRef}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
           onMouseDown={() => {
             direction = 4;
           }}
@@ -111,11 +111,10 @@ export default function Home() {
           }}
         >
           ↑
-        </button>
+        </Control>
         <br />
-        <button
+        <Control
           ref={buttonLeftRef}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
           onMouseDown={() => {
             direction = 2;
           }}
@@ -130,10 +129,9 @@ export default function Home() {
           }}
         >
           ←
-        </button>
-        <button
+        </Control>
+        <Control
           ref={buttonDownRef}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px] mx-[5px]"
           onMouseDown={() => {
             direction = 3;
           }}
@@ -148,7 +146,7 @@ export default function Home() {
           }}
         >
           ↓
-        </button>
+        </Control>
         <Control
           ref={buttonRightRef}
           onMouseDown={() => {
