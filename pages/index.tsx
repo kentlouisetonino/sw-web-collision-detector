@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Fragment, useEffect, useRef } from "react";
 import Control from "../libs/design/Control";
 
@@ -78,6 +79,10 @@ export default function Home() {
 
   return (
     <Fragment>
+      <Head>
+        <title>Collision Detector</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <h1 className="text-4xl font-bold my-10">Collision Detector</h1>
       <canvas
         ref={canvasRef}
