@@ -1,6 +1,6 @@
 ## Description
 
-> - A computer program that runs in the browser. This allow you to gain score once there is a collision between big and small square.
+> - A simple game computer program that runs in the browser. This allow you to gain score once there is a collision between big and small square.
 > - Link: https://collisiondetector.vercel.app/
 
 <br />
