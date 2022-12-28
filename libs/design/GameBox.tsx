@@ -28,8 +28,10 @@ export default function GameBox() {
       const timePassed = (Date.now() - t) / 1000
       t = Date.now()
 
+      // clear entire canvas
       context?.clearRect(0, 0, 600, 400)
 
+      // score
       context!.font = '20px Titillium Web, sans-serif'
       context!.fillStyle = 'white'
       context?.fillText('Score: ' + score, 20, 30)
