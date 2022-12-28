@@ -7,13 +7,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <Head>
-        <link
-          rel="icon"
-          href="/static/images/logo/favicon.png"
-          type="image/png"
-          sizes="16x16"
-        />
-        <meta name="viewport" content="width=600" />
+        <title>Collision Detector</title>
+        <link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />
       </Head>
       <Component {...pageProps} />
     </Fragment>
