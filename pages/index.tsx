@@ -16,7 +16,6 @@ export default function Home() {
     }
   }, [])
 
-  // handle mobile view for small devices
   if (browserWidth < 600) {
     return (
       <h1 className="text-base mx-20 grid h-screen place-items-center">
