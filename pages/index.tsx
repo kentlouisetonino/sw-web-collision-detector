@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useRef } from "react";
+import Control from "../libs/design/Control";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -11,10 +12,10 @@ export default function Home() {
   let y = 150;
   let coinx = Math.random() * (600 - 50);
   let coinY = Math.random() * (400 - 50);
+  let direction = 0;
 
   let t = Date.now();
   let speed = 300;
-  let dir = 0;
   let score = 0;
 
   useEffect(() => {
@@ -41,19 +42,19 @@ export default function Home() {
       context!.fillStyle = "#e3c228";
       context?.fill();
 
-      if (dir == 1) {
+      if (direction == 1) {
         if (x + 100 < 600) {
           x += speed * timePassed;
         }
-      } else if (dir == 2) {
+      } else if (direction == 2) {
         if (x > 0) {
           x -= speed * timePassed;
         }
-      } else if (dir == 3) {
+      } else if (direction == 3) {
         if (y + 100 < 400) {
           y += speed * timePassed;
         }
-      } else if (dir == 4) {
+      } else if (direction == 4) {
         if (y > 0) {
           y -= speed * timePassed;
         }
@@ -90,81 +91,76 @@ export default function Home() {
       <div className="my-5">
         <button
           ref={buttonUpRef}
-          id="up"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
           onMouseDown={() => {
-            dir = 4;
+            direction = 4;
           }}
           onTouchStart={() => {
-            dir = 4;
+            direction = 4;
           }}
           onMouseUp={() => {
-            dir = 0;
+            direction = 0;
           }}
           onTouchEnd={() => {
-            dir = 0;
+            direction = 0;
           }}
         >
           ↑
         </button>
         <br />
         <button
-          id="left"
           ref={buttonLeftRef}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
           onMouseDown={() => {
-            dir = 2;
+            direction = 2;
           }}
           onTouchStart={() => {
-            dir = 2;
+            direction = 2;
           }}
           onMouseUp={() => {
-            dir = 0;
+            direction = 0;
           }}
           onTouchEnd={() => {
-            dir = 0;
+            direction = 0;
           }}
         >
           ←
         </button>
         <button
           ref={buttonDownRef}
-          id="down"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px] mx-[5px]"
           onMouseDown={() => {
-            dir = 3;
+            direction = 3;
           }}
           onTouchStart={() => {
-            dir = 3;
+            direction = 3;
           }}
           onMouseUp={() => {
-            dir = 0;
+            direction = 0;
           }}
           onTouchEnd={() => {
-            dir = 0;
+            direction = 0;
           }}
         >
           ↓
         </button>
-        <button
-          id="right"
+        <Control
           ref={buttonRightRef}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-[5px]"
           onMouseDown={() => {
-            dir = 1;
-          }}
-          onTouchStart={() => {
-            dir = 1;
+            direction = 1;
           }}
           onMouseUp={() => {
-            dir = 0;
+            direction = 0;
+          }}
+          onTouchStart={() => {
+            direction = 1;
           }}
           onTouchEnd={() => {
-            dir = 0;
+            direction = 0;
           }}
         >
           →
-        </button>
+        </Control>
       </div>
     </Fragment>
   );
