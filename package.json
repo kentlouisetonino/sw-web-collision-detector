@@ -1,6 +1,7 @@
 {
   "name": "collision-detector",
   "version": "0.1.0",
+  "author": "Kent Louise Tonino",
   "private": true,
   "scripts": {
     "dev": "next dev",
