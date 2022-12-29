@@ -53,10 +53,10 @@ jobs:
       - name: Run Linter
         run: |
           npm run lint
-      - name: Run prettier
+      - name: Run Prettier
         run: |
           npm run format
-      - name: Save changes
+      - name: Save Changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
